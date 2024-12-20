@@ -22,3 +22,5 @@ When o usuário preenche os campos obrigatórios:
 And clica em "Publicar"
 Then o sistema exibe a mensagem "Reserva publicada com sucesso"
 And a reserva aparece como ativa na página de reservas do anfitrião
+
+testes teste testes
