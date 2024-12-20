@@ -32,5 +32,21 @@ Then o sistema exibe a mensagem de erro "A senha deve conter pelo menos 8 caract
 And o cadastro não é concluído 
 And o usuário permanece na página de “Cadastro”.
 
+Scenario: O usuário tenta se cadastrar com um email já cadastrado
+Given que o usuário acessa a página de “Cadastro”
+When o usuário preenche os campos obrigatórios:   
+| Tipo de Cadastro      | Pessoa Física
+| Nome                         | "Bruno Teste Silva" 
+| CPF                            | "123.456.789-00" 
+| Data de nascimento | "11/07/2000" 
+| UF                              | "SP" 
+| Email                         | "bruno.teste@exa.com"  
+| Login                         | "brunoteste" 
+| Senha                        | "senha123" 
+And o usuário inseriu um “email” que já está registrado
+And clica em "Cadastrar"
+Then o sistema exibe a mensagem de erro "Este email já está em uso" 
+And o cadastro não é concluído 
+And o usuário permanece na página de “Cadastro”.
 
 
